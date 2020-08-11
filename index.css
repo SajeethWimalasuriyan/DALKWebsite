@@ -2,12 +2,16 @@ body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+::-webkit-scrollbar {
+  display: none;
+  }
 .front-intro-page{
     width: 100vw;
     height: 100vh;
     background-image: url("backDALK.png");
    
 }
+
 .title{
     text-align: center;
     color: white;
@@ -36,7 +40,7 @@ body{
     background-color: #e4e4e4;
 }
 .instructions-size{
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 .documentation{
@@ -44,7 +48,7 @@ body{
     padding: 30px;
 }
 .documentation-size{
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 .bold{
@@ -62,11 +66,12 @@ body{
     background-color: #e4e4e4;
     
     padding: 16px;
+    max-width: 1100px;
     
 }
 
 .row-two{
-   
+  max-width: 1100px;
     padding: 16px;
 }
 .description-of-parameter{
@@ -89,7 +94,7 @@ img{
   .nav {
     height: 50px;
     width: 100vw;
-    background-color: #000000f1;
+    background-color: #14093d;
     position: fixed;
     z-index: 1;
   }
@@ -98,12 +103,7 @@ img{
     display: inline;
   }
   
-  .nav > .nav-header > .nav-title {
-    display: inline-block;
-    font-size: 22px;
-    color: #fff;
-    padding: 10px 10px 10px 10px;
-  }
+
   
   .nav > .nav-btn {
     display: none;
@@ -112,7 +112,7 @@ img{
   .nav > .nav-links {
     display: inline;
     float: right;
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .nav > .nav-links > a {
@@ -129,7 +129,9 @@ img{
   .nav > #nav-check {
     display: none;
   }
- 
+ p{
+   max-width: 1000px
+ }
   @media (max-width:900px) {
     .title{
         font-size: 60px;
@@ -165,7 +167,7 @@ img{
       position: absolute;
       display: block;
       width: 100%;
-      background-color: rgb(82, 82, 82);
+      background-color: #0a041df5;
       height: 0px;
       transition: all 0.3s ease-in;
       overflow-y: hidden;
