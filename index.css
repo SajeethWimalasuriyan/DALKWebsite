@@ -64,7 +64,10 @@ body{
 .description-of-parameter{
     padding-top: 15px;
 }
-
+img{
+    max-width: 100%;
+    height: auto;
+}
 
 
 
@@ -73,16 +76,14 @@ body{
     box-sizing: border-box;
   }
   
-  body {
-    margin: 0px;
-    font-family: 'segoe ui';
-  }
+
   
   .nav {
     height: 50px;
-    width: 100%;
+    width: 100vw;
     background-color: #4d4d4d;
-    position: relative;
+    position: fixed;
+    z-index: 1;
   }
   
   .nav > .nav-header {
@@ -120,8 +121,17 @@ body{
   .nav > #nav-check {
     display: none;
   }
-  
+ 
   @media (max-width:600px) {
+    .title{
+        font-size: 60px;
+    }
+
+
+
+
+
+
     .nav > .nav-btn {
       display: inline-block;
       position: absolute;
