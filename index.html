@@ -1,204 +1,281 @@
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    </style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DAL K-ANONYMITY</title>
-  <meta name="description" content="DAL K-ANONYMITY">
-  <meta name="author" content="SitePoint">
+   <head>
+      <meta charset="utf-8">
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+      </style>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>DAL K-ANONYMITY</title>
+      <meta name="description" content="DAL K-ANONYMITY">
+      <meta name="author" content="SitePoint">
+      <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   </head>
+   <body>
+      <script src="js/scripts.js"></script>
+      <!-- .navbar -->
+      <div class="nav">
+         <input type="checkbox" id="nav-check">
+         <div class="nav-header">
+         </div>
+         <div class="nav-btn">
+            <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+            </label>
+         </div>
+         <div class="nav-links">
+            <a class="link-c" href="" >HOME</a>
+            <a class="link-c" href="" >PUBLICATION</a>
+            <a class="link-c" href="#" >GITHUB</a>
+            <a class="link-c" href="#doc-jump">DOCUMENTATION</a>
+            <a class="link-c" href="#ins-jump" >INSTRUCTIONS</a>
+            <a class="link-c" href="#" >CONTACT</a>
+         </div>
+      </div>
+      <!-- /.navbar -->
+      <div  class="front-intro-page">
+         <div class="front-intro-page-content">
+            <h1 data-aos="fade-down" class="title">DAL K-ANONYMITY</h1>
+            <img id="down-arrow" src="down.png" alt="Arrow promting user to go down page.">
+            <div id="doc-jump"></div>
+         </div>
+      </div>
+      <div data-aos="zoom-in-up"  class="documentation">
+      <div class="documentation-size">
+         <h2>Documentation</h2>
+         <h3>ArcGIS Pro Toolbox: Daily Activity Locations K-anonymity</h3>
+         <p></p>
+         <p></p>
+         <h4>Description:</h4>
+         <p></p>
+         <p>The current version of ArcGIS Pro Toolbox offers a Python script/tool that detecting Daily Activity Locations K-anonymity from Raw GPS data and calculate its disclosure rate. Activity Location are defined as a place that the user has spent enough time (greater than 6 hours for the home location and 30 minutes for activity location) on an area of accumulating a certain number of GPS points by calculating a kernel density of the GPS points and detecting the local maxima of the density surface. This tool contains 2 inputs (Raw GPS dataset, home time), 1 output (DALK), and 7 optional inputs.</p>
+         <p></p>
+         <p>The tool utilizes the Gaussian Displacement algorithm for geomasking as default, this tool may be edited and replaced by your own algorithm after implementing the script.</p>
+         <p></p>
+         <p></p>
+         <h4>Content:</h4>
+         <p></p>
+         <p>The downloaded DALK.zip folder contains:</p>
+         <p>The DALK.tbx file (Arctoolbox)</p>
+         <p>ActivityLocations.py tool script file</p>
+         <p>A sample subfolder, containing a sample File Geodatabase with one raw GPS track for testing.</p>
+         <p></p>
+         <p></p>
+         <h4>Installation:</h4>
+         <p></p>
+         <p>This tool require ArcGIS Pro 12.x to run. Copy the DALK folder to a folder on your drive, without changing the directory structure. Then add the toolbox DALK.tbx to ArcToolbox in ArcGIS Pro.</p>
+         <p></p>
+         <p></p>
+         <h4>Variable Types:</h4>
+         <p></p>
+         <div data-aos="zoom-in-up" class="row-two">
+            <div class="left bold">Parameter</div>
+            <div class="right bold">Data Type</div>
+            <br>
+         </div>
+         <div data-aos="zoom-in-up" class="row-one">
+            <div class="left">Raw GPS Data(in)</div>
+            <div class="right">Geodataset</div>
+            <br>
+            <div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div>
+         </div>
+         <div data-aos="zoom-in-up" class="row-two">
+            <div class="left">Processed_GPS_Data(optional)</div>
+            <div class="right">Geodataset</div>
+            <br>
+            <div class="description-of-parameter">  Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div>
+         </div>
+         <div data-aos="zoom-in-up" class="row-one">
+            <div class="left">Output_Name(out)</div>
+            <div class="right">String</div>
+            <br>
+            <div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div>
+         </div>
+         <div data-aos="zoom-in-up" class="row-two">
+            <div class="left">Kernal Bandwidth</div>
+            <div class="right">Long</div>
+            <br>
+            <div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div>
+         </div>
+         <div data-aos="zoom-in-up" class="row-one">
+            <div class="left">Time_Extraction_Buffer_Size</div>
+            <div class="right">Long</div>
+            <br>
+            <div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div>
+         </div>
+         <div data-aos="zoom-in-up" class="row-two">
+            <div class="left">Radius</div>
+            <div class="right">Long</div>
+            <br>
+            <div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div>
+         </div>
+         <div data-aos="zoom-in-up" class="row-one">
+            <div class="left">Stock_Buffer</div>
+            <div class="right">Long</div>
+            <br>
+            <div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div>
+         </div>
+         <div data-aos="zoom-in-up" class="row-two">
+            <div class="left">Home_Time</div>
+            <div class="right">Long</div>
+            <br>
+            <div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div>
+         </div>
+         <div data-aos="zoom-in-up" class="row-one">
+            <div class="left">Resample (Optional)</div>
+            <div class="right">Boolean</div>
+            <br>
+            <div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div>
+         </div>
+         <div id="ins-jump"></div>
+         <div data-aos="zoom-in-up" class="row-two">
+            <div class="left">Interpolate (Optional)</div>
+            <div class="right">Boolean</div>
+            <br>
+            <div class="description-of-parameter">Description:  A feature class of the input of raw GPS dataset that to be used for calculating DALK.</span></div>
+            <br>
+            <h4>Limitations:</h4>
+            <p></p>
+            <p>This tool has not been extensively tested with shapefiles. Recommended format is ArcGIS FGDB.</p>
+         </div>
+      </div>
+      <div  data-aos="zoom-in-up"  class="instructions" >
+         <div class="instructions-size">
+            <h2 >Instructions</h2>
+            <p></p>
+            <p><span class="bold">1) </span>After downloaded and upzip the DALK.zip to your local folder directory, Open ArcGIS Pro in your computer. The new page shows:</p>
+            <img data-aos="zoom-in-up" src="ins1.png">
+            <p><span class="bold">2) </span>Select New Map under Blank Templates, and a prompt will pop up:</p>
+            <img data-aos="zoom-in-up" src="ins2.png">
+            <p><span class="bold">3) </span>Click OK for using the default name and location. (or create by your own)</p>
+            <p><span class="bold">4) </span>Then in the right-hand side of the window, choose Catalog, the drop-down menu will be shown:</p>
+            <img data-aos="zoom-in-up" src="ins3.png">
+            <p><span class="bold">5) </span>Right click the Toolboxes and select add Toolbox:</p>
+            <img data-aos="zoom-in-up" src="ins4.png">
+            <p><span class="bold">6) </span>Direct to the location you unzip the DALK folder and select the DALK.tbx, click OK:</p>
+            <img data-aos="zoom-in-up" src="ins5.png">
+            <p><span class="bold">7) </span>Then under your toolbox in Catalog, the toolbox will be added in:</p>
+            <img data-aos="zoom-in-up" src="ins6.png">
+            <p><span class="bold">8) </span>Under DALK.tbx, double click Script, the UI of the tool will be shown:</p>
+            <img data-aos="zoom-in-up" src="ins7.png">
+            <p><span class="bold">9) </span>As you can see, there is three required input should be filled in the tool (Raw GPS Data, Output Name, Home Time), we will try to use a sample and leave everything else as default.</p>
+            <p><span class="bold">10) </span>Select Raw GPS Data, choose a folder from the Sample GPS raw data file, Type Output1 as the Output Name, and 6 for the Home Time:</p>
+            <img data-aos="zoom-in-up" src="ins8.png">
+            <p><span class="bold">11) </span>Click Run then wait for the Processing (it may take several minutes to run):</p>
+            <img data-aos="zoom-in-up" src="ins9.png">
+            <p><span class="bold">12) </span>Once it shows successful, you can add the result from the adding database.</p>
+            <img data-aos="zoom-in-up" src="ins10.png">
+            <p><span class="bold">13) </span>And choose C://DALKY.gdb and click OK:</p>
+            <img data-aos="zoom-in-up" src="ins11.png">
+            <p><span class="bold">14) </span>Then you can select the Output1 under DALKAY.gdb and drag to the map to check the result:</p>
+            <img data-aos="zoom-in-up" src="ins13.png">
+            <p></p>
+            <p><span class="bold">15) </span>And the disclosure rate will be shown in the tool message:</p>
+            <img data-aos="zoom-in-up" src="ins14.png">
+            <p></p>
+            <p></p>
+         </div>
+      </div>
+      <div  data-aos="zoom-in-up"  class="contact" >
+         <div class="contact-size">
+            <h3 id="contact-title"> Contact: </h3>
 
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+            <form id="fs-frm" name="department-contact-form" accept-charset="utf-8" action="https://formspree.io/sajeethwim2579@icloud.com" method="post">
+               <fieldset id="fs-frm-inputs">
+                  <div class="contact-grid">
+                     <div class="ls">
+                        <label for="full-name">Full Name</label><br>
+                 <input type="text" name="name" id="full-name" placeholder="First and Last" required=""><br>
+                 <label for="email-address">Email Address</label><br>
+                 <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required=""><br>
+                 <label for="department">Type</label><br>
+                 <select name="department" id="department" required=""><br>
+                   <option value="Select" selected="" disabled="">Select</option><br>
+                   <option value="Software Support">Software Support</option>
+                   <option value="Bug Report">Bug Report</option>
+                   <option value="General Inquiry">General Inquiry</option>
+                 </select>
+                 <br>
+                 <button id='input-button' type="submit" value="Send Message">Send Message</button>
+                     </div>
+                 <div class="rs">
+                  <label for="message">Message</label><br>
+                  <textarea rows="7" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required=""></textarea>
+                 </div>
+                
+                 <input type="hidden" name="_subject" id="email-subject" value="Department Contact Form Submission">
+               </div>
+               </fieldset>
+               
+             </form>
+         </div>
+      </div>
+  <!-- Site footer -->
+  <footer class="site-footer">
+   <div class="container">
+     <div class="row">
+       <div class="col-sm-12 col-md-6">
+         <h6>About</h6>
+         <p class="text-justify">The current version of ArcGIS Pro Toolbox offers a Python script/tool that detecting Daily Activity Locations K-anonymity from Raw GPS data and calculate its disclosure rate. Activity Location are defined as a place that the user has spent enough time (greater than 6 hours for the home location and 30 minutes for activity location) on an area of accumulating a certain number of GPS points by calculating a kernel density of the GPS points and detecting the local maxima of the density surface. This tool contains 2 inputs (Raw GPS dataset, home time), 1 output (DALK), and 7 optional inputs.</p>
+       </div>
 
-<body>
-    
-  <script src="js/scripts.js"></script>
+       <div class="col-xs-6 col-md-3">
+         <h6>Categories</h6>
+         <ul class="footer-links">
+           <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+           <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+           <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+           <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+           <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+           <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+         </ul>
+       </div>
+
+       <div class="col-xs-6 col-md-3">
+         <h6>Quick Links</h6>
+         <ul class="footer-links">
+           <li><a href="http://scanfcode.com/about/">About Us</a></li>
+           <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+           <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+           <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+           <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+         </ul>
+       </div>
+     </div>
+     <hr>
+   </div>
+   <div class="container">
+     <div class="row">
+       <div class="col-md-8 col-sm-6 col-xs-12">
+         <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+      <a href="https://www.utoronto.ca/" target="Blank">University of Toronto</a>.
+         </p>
+       </div>
+
+       <div class="col-md-4 col-sm-6 col-xs-12">
+         <ul class="social-icons">
+           <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+           <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+           <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+           <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+         </ul>
+       </div>
+     </div>
+   </div>
+</footer>
 
 
 
-
- <!-- .navbar -->
- <div class="nav">
-    <input type="checkbox" id="nav-check">
-    <div class="nav-header">
-      
-    </div>
-    <div class="nav-btn">
-      <label for="nav-check">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-    </div>
-    
-    <div class="nav-links">
-      <a class="link-c" href="" >HOME</a>
-      <a class="link-c" href="#" >GITHUB</a>
-      <a class="link-c" href="#doc-jump">DOCUMENTATION</a>
-      <a class="link-c" href="#ins-jump" >INSTRUCTIONS</a>
-      
-      <a class="link-c" href="#" >CONTACT</a>
-    </div>
-  </div>
-<!-- /.navbar -->
-
-
-  <div  class="front-intro-page">
-    <div class="front-intro-page-content">
-      <h1 data-aos="fade-down" class="title">DAL K-ANONYMITY</h1>
-      <img id="down-arrow" src="down.png" alt="Arrow promting user to go down page.">
-      <div id="doc-jump"></div>
-    </div>
-   
-  </div>
-  
-
-
-<div data-aos="zoom-in-up"  class="documentation">
-  <div class="documentation-size">
-    <h2>Documentation</h2>
-    <h3>ArcGIS Pro Toolbox: Daily Activity Locations K-anonymity</h3>
-
-    <p></p>
-    
-    <p></p>
-    
-    <h4>Description:</h4>
-    
-    <p></p>
-    
-    <p>The current version of ArcGIS Pro Toolbox offers a Python script/tool that detecting Daily Activity Locations K-anonymity from Raw GPS data and calculate its disclosure rate. Activity Location are defined as a place that the user has spent enough time (greater than 6 hours for the home location and 30 minutes for activity location) on an area of accumulating a certain number of GPS points by calculating a kernel density of the GPS points and detecting the local maxima of the density surface. This tool contains 2 inputs (Raw GPS dataset, home time), 1 output (DALK), and 7 optional inputs.</p>
-    
-    <p></p>
-    
-    <p>The tool utilizes the Gaussian Displacement algorithm for geomasking as default, this tool may be edited and replaced by your own algorithm after implementing the script.</p>
-    
-    <p></p>
-    
-    <p></p>
-    
-    <h4>Content:</h4>
-    
-    <p></p>
-    
-    <p>The downloaded DALK.zip folder contains:</p>
-    
-    <p>The DALK.tbx file (Arctoolbox)</p>
-    
-    <p>ActivityLocations.py tool script file</p>
-    
-    <p>A sample subfolder, containing a sample File Geodatabase with one raw GPS track for testing.</p>
-    
-    <p></p>
-    
-    <p></p>
-    
-    <h4>Installation:</h4>
-    
-    <p></p>
-    
-    <p>This tool require ArcGIS Pro 12.x to run. Copy the DALK folder to a folder on your drive, without changing the directory structure. Then add the toolbox DALK.tbx to ArcToolbox in ArcGIS Pro.</p>
-    
-    <p></p>
-    
-    <p></p>
-    
-    <h4>Variable Types:</h4>
-    
-    <p></p>
-    
-    <div data-aos="zoom-in-up" class="row-two"><div class="left bold">Parameter</div> <div class="right bold">Data Type</div><br></div>
-    <div data-aos="zoom-in-up" class="row-one"><div class="left">Raw GPS Data(in)</div> <div class="right">Geodataset</div><br><div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div></div>
-    <div data-aos="zoom-in-up" class="row-two"><div class="left">Processed_GPS_Data(optional)</div> <div class="right">Geodataset</div><br><div class="description-of-parameter">  Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div></div>
-    <div data-aos="zoom-in-up" class="row-one"><div class="left">Output_Name(out)</div> <div class="right">String</div><br><div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div></div>
-    <div data-aos="zoom-in-up" class="row-two"><div class="left">Kernal Bandwidth</div> <div class="right">Long</div><br><div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div></div>
-    <div data-aos="zoom-in-up" class="row-one"> <div class="left">Time_Extraction_Buffer_Size</div> <div class="right">Long</div><br><div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div></div>
-    <div data-aos="zoom-in-up" class="row-two"><div class="left">Radius</div> <div class="right">Long</div><br><div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div></div>
-    <div data-aos="zoom-in-up" class="row-one"><div class="left">Stock_Buffer</div> <div class="right">Long</div><br><div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div></div>
-    <div data-aos="zoom-in-up" class="row-two"><div class="left">Home_Time</div> <div class="right">Long</div><br><div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div></div>
-    <div data-aos="zoom-in-up" class="row-one"><div class="left">Resample (Optional)</div> <div class="right">Boolean</div><br><div class="description-of-parameter"> Description: A feature class of the input of raw GPS dataset that to be used for calculating DALK.</div></div>
-    <div id="ins-jump"></div>
-    <div data-aos="zoom-in-up" class="row-two"><div class="left">Interpolate (Optional)</div> <div class="right">Boolean</div><br><div class="description-of-parameter">Description:  A feature class of the input of raw GPS dataset that to be used for calculating DALK.</span></div>
-    
-
-    
-
-    
-  
- 
-    
-
- 
-    
-    
-<br>
-
-    <h4>Limitations:</h4>
-    
-    <p></p>
-    
-    <p>This tool has not been extensively tested with shapefiles. Recommended format is ArcGIS FGDB.</p>
-    
-  </div>
-
-</div>
-<div  data-aos="zoom-in-up"  class="instructions" >
-  <div class="instructions-size">
-  <h2 >Instructions</h2>
-
-<p></p>
-
-<p><span class="bold">1) </span>After downloaded and upzip the DALK.zip to your local folder directory, Open ArcGIS Pro in your computer. The new page shows:</p>
-<img data-aos="zoom-in-up" src="ins1.png">
-<p><span class="bold">2) </span>Select New Map under Blank Templates, and a prompt will pop up:</p>
-<img data-aos="zoom-in-up" src="ins2.png">
-<p><span class="bold">3) </span>Click OK for using the default name and location. (or create by your own)</p>
-
-<p><span class="bold">4) </span>Then in the right-hand side of the window, choose Catalog, the drop-down menu will be shown:</p>
-<img data-aos="zoom-in-up" src="ins3.png">
-<p><span class="bold">5) </span>Right click the Toolboxes and select add Toolbox:</p>
-<img data-aos="zoom-in-up" src="ins4.png">
-<p><span class="bold">6) </span>Direct to the location you unzip the DALK folder and select the DALK.tbx, click OK:</p>
-<img data-aos="zoom-in-up" src="ins5.png">
-<p><span class="bold">7) </span>Then under your toolbox in Catalog, the toolbox will be added in:</p>
-<img data-aos="zoom-in-up" src="ins6.png">
-<p><span class="bold">8) </span>Under DALK.tbx, double click Script, the UI of the tool will be shown:</p>
-<img data-aos="zoom-in-up" src="ins7.png">
-<p><span class="bold">9) </span>As you can see, there is three required input should be filled in the tool (Raw GPS Data, Output Name, Home Time), we will try to use a sample and leave everything else as default.</p>
-
-<p><span class="bold">10) </span>Select Raw GPS Data, choose a folder from the Sample GPS raw data file, Type Output1 as the Output Name, and 6 for the Home Time:</p>
-<img data-aos="zoom-in-up" src="ins8.png">
-<p><span class="bold">11) </span>Click Run then wait for the Processing (it may take several minutes to run):</p>
-<img data-aos="zoom-in-up" src="ins9.png">
-<p><span class="bold">12) </span>Once it shows successful, you can add the result from the adding database.</p>
-<img data-aos="zoom-in-up" src="ins10.png">
-<p><span class="bold">13) </span>And choose C://DALKY.gdb and click OK:</p>
-<img data-aos="zoom-in-up" src="ins11.png">
-<p><span class="bold">14) </span>Then you can select the Output1 under DALKAY.gdb and drag to the map to check the result:</p>
-<img data-aos="zoom-in-up" src="ins13.png">
-<p></p>
-
-<p><span class="bold">15) </span>And the disclosure rate will be shown in the tool message:</p>
-<img data-aos="zoom-in-up" src="ins14.png">
-<p></p>
-
-<p></p>
-</div>
-
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="index.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-</body>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="index.js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+         AOS.init();
+      </script>
+   </body>
 </html>
