@@ -130,6 +130,7 @@ label{
   width: 70%;
   height: 39px;
   border:none;
+  background-color: rgb(202, 202, 202);
 }
 
 
@@ -184,6 +185,10 @@ label{
   }
  p{
    max-width: 1000px
+ }
+ .breakerr{
+   height: 3px;
+   background-color: #14093d;
  }
   @media (max-width:900px) {
     .title{
