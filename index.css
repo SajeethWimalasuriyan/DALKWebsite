@@ -187,7 +187,7 @@ label{
    max-width: 1000px
  }
  .breakerr{
-   height: 3px;
+   height: 1px;
    background-color: #14093d;
  }
   @media (max-width:900px) {
